@@ -1,0 +1,35 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<section id="contact">
+    <h1>Contact Me</h1>
+    <p>Have a question or want to work together? Feel free to reach out!</p>
+    <form method="POST">
+        {% csrf_token %}
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send</button>
+    </form>
+    <p>Or connect with me on:</p>
+    <ul>
+        <li><a href="mailto:imshresthasagar@gmail.com">Email</a></li>
+        <li><a href="https://www.linkedin.com/in/shresthasgar1/">LinkedIn</a></li>
+        <li><a href="https://github.com/shresthasgar1">GitHub</a></li>
+    </ul>
+</section>
+{% endblock %}
+
+<h1>Contact Me</h1>
+{% if success %}
+<p>Thank you for your message!</p>
+{% endif %}
+<form method="POST">
+    {% csrf_token %}
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" placeholder="Your Message" required></textarea>
+    <button type="submit">Send</button>
+</form>
+
